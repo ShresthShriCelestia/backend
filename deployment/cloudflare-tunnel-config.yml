@@ -1,0 +1,35 @@
+# Cloudflare Tunnel Configuration for Celestia Ground Station
+# 
+# Instructions:
+# 1. Replace <TUNNEL_ID> with your actual tunnel ID
+# 2. Replace <TUNNEL_ID>.json with your credentials file path
+# 3. Update hostnames to match your domain
+# 4. Copy to: /home/pi/.cloudflared/config.yml
+
+tunnel: <TUNNEL_ID>
+credentials-file: /home/pi/.cloudflared/<TUNNEL_ID>.json
+
+ingress:
+  # SSH Access (for remote management)
+  - hostname: ssh.celestiaenergy.com
+    service: ssh://localhost:22
+  
+  # Ground Station Backend API (for remote UI)
+  - hostname: groundstation.celestiaenergy.com
+    service: https://localhost:8000
+    originRequest:
+      noTLSVerify: true  # Accept self-signed cert
+  
+  # Admin Panel (optional - only if you want remote admin access)
+  - hostname: admin-groundstation.celestiaenergy.com
+    service: https://localhost:8000
+    originRequest:
+      noTLSVerify: true
+      httpHostHeader: localhost
+  
+  # Catch-all rule (required)
+  - service: http_status:404
+
+# Optional: Logging
+# loglevel: info
+# logfile: /home/pi/.cloudflared/tunnel.log

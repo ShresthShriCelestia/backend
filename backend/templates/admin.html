@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terra Station - Local Admin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .container {
+            background: rgba(30, 41, 59, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #f97316;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .status-grid {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .status-item {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .status-label {
+            color: #94a3b8;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .status-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .status-value.success {
+            color: #10b981;
+        }
+
+        .status-value.warning {
+            color: #f59e0b;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 15px;
+        }
+
+        .btn-primary {
+            background: #f97316;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #ea580c;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+        }
+
+        .btn-primary:disabled {
+            background: #64748b;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .pairing-code {
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid #10b981;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .pairing-code.active {
+            display: block;
+        }
+
+        .pairing-code-label {
+            color: #10b981;
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pairing-code-value {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 8px;
+            color: #10b981;
+            font-family: 'Courier New', monospace;
+        }
+
+        .pairing-timer {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .alert.show {
+            display: block;
+        }
+
+        .alert-success {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid #10b981;
+            color: #10b981;
+        }
+
+        .alert-error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid #ef4444;
+            color: #ef4444;
+        }
+
+        .network-qr {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .network-qr-title {
+            color: #1e293b;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .network-url {
+            background: rgba(15, 23, 42, 0.8);
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin-top: 10px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛰️ Terra Station</h1>
+        <p class="subtitle">Local Administration Panel</p>
+
+        <div id="alert" class="alert"></div>
+
+        <div class="status-grid">
+            <div class="status-item">
+                <div class="status-label">System Status</div>
+                <div class="status-value success" id="system-status">🟢 Running</div>
+            </div>
+            <div class="status-item">
+                <div class="status-label">Network Address</div>
+                <div class="status-value" id="network-address">Loading...</div>
+            </div>
+            <div class="status-item">
+                <div class="status-label">Paired Devices</div>
+                <div class="status-value" id="paired-count">0</div>
+            </div>
+        </div>
+
+        <div id="pairing-display" class="pairing-code">
+            <div class="pairing-code-label">Pairing Code</div>
+            <div class="pairing-code-value" id="pairing-code">------</div>
+            <div class="pairing-timer" id="pairing-timer">Valid for 5:00</div>
+        </div>
+
+        <button id="pairing-btn" class="btn btn-primary">
+            🔐 Enable Pairing Mode
+        </button>
+
+        <div class="network-qr">
+            <div class="network-qr-title">Remote Access URL</div>
+            <div class="network-url" id="remote-url">https://loading...</div>
+            <p style="color: #64748b; font-size: 12px; margin-top: 10px;">
+                Share this URL with remote users to connect
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let pairingInterval = null;
+        let pairingTimeout = null;
+
+        // Load device info on page load
+        async function loadDeviceInfo() {
+            try {
+                const response = await fetch('/api/device/info');
+                const data = await response.json();
+
+                document.getElementById('network-address').textContent = data.local_ip;
+                document.getElementById('remote-url').textContent = `https://${data.local_ip}:8000`;
+                document.getElementById('paired-count').textContent =
+                    data.pairing_required ? '0 (First-time setup required)' : 'Connected';
+            } catch (error) {
+                console.error('Failed to load device info:', error);
+            }
+        }
+
+        // Show alert message
+        function showAlert(message, type = 'success') {
+            const alert = document.getElementById('alert');
+            alert.textContent = message;
+            alert.className = `alert alert-${type} show`;
+            setTimeout(() => {
+                alert.classList.remove('show');
+            }, 5000);
+        }
+
+        // Start pairing mode
+        async function startPairing() {
+            const btn = document.getElementById('pairing-btn');
+            btn.disabled = true;
+            btn.textContent = 'Starting Pairing Mode...';
+
+            try {
+                const response = await fetch('/api/device/pairing/start-local', {
+                    method: 'POST'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to start pairing mode');
+                }
+
+                const data = await response.json();
+
+                // Display pairing code
+                document.getElementById('pairing-code').textContent =
+                    String(data.pairing_code).padStart(6, '0');
+                document.getElementById('pairing-display').classList.add('active');
+
+                // Update button
+                btn.textContent = '⏸️ Pairing Mode Active';
+
+                showAlert('Pairing mode activated! Share the code with remote users.', 'success');
+
+                // Start countdown timer
+                startCountdown(data.expires_in_seconds);
+
+            } catch (error) {
+                console.error('Error starting pairing:', error);
+                showAlert('Failed to start pairing mode. Please try again.', 'error');
+                btn.disabled = false;
+                btn.textContent = '🔐 Enable Pairing Mode';
+            }
+        }
+
+        // Countdown timer
+        function startCountdown(seconds) {
+            let remaining = seconds;
+            const timerEl = document.getElementById('pairing-timer');
+            const btn = document.getElementById('pairing-btn');
+
+            if (pairingInterval) clearInterval(pairingInterval);
+            if (pairingTimeout) clearTimeout(pairingTimeout);
+
+            pairingInterval = setInterval(() => {
+                remaining--;
+                const mins = Math.floor(remaining / 60);
+                const secs = remaining % 60;
+                timerEl.textContent = `Valid for ${mins}:${String(secs).padStart(2, '0')}`;
+
+                if (remaining <= 0) {
+                    clearInterval(pairingInterval);
+                    endPairingMode();
+                }
+            }, 1000);
+        }
+
+        // End pairing mode
+        function endPairingMode() {
+            document.getElementById('pairing-display').classList.remove('active');
+            const btn = document.getElementById('pairing-btn');
+            btn.disabled = false;
+            btn.textContent = '🔐 Enable Pairing Mode';
+            showAlert('Pairing mode expired. Click to start again.', 'warning');
+        }
+
+        // Event listeners
+        document.getElementById('pairing-btn').addEventListener('click', startPairing);
+
+        // Initialize
+        loadDeviceInfo();
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+{
+  "3pN7H-wlFOs9Vh2fHl_rQLWeFW2MYsV_0jN-rEDKQQw": {
+    "token": "3pN7H-wlFOs9Vh2fHl_rQLWeFW2MYsV_0jN-rEDKQQw",
+    "device_name": "Chrome - 04:41 PM",
+    "device_type": "browser",
+    "paired_at": "2025-11-25T17:42:19.070565",
+    "last_seen": "2025-11-25T17:42:19.070569",
+    "access_level": "operator"
+  },
+  "jqMWVHt8e01ALDzmB4LHKxqw43pG8guppriwVKoWiU8": {
+    "token": "jqMWVHt8e01ALDzmB4LHKxqw43pG8guppriwVKoWiU8",
+    "device_name": "Chrome - 04:44 PM",
+    "device_type": "browser",
+    "paired_at": "2025-11-25T17:44:46.607015",
+    "last_seen": "2025-11-25T17:44:46.607018",
+    "access_level": "operator"
+  },
+  "xgHAOkGAsM0qywHOd_ZesYqGnDpttLRhdNZyeK0WTIc": {
+    "token": "xgHAOkGAsM0qywHOd_ZesYqGnDpttLRhdNZyeK0WTIc",
+    "device_name": "Chrome - 12:17 PM",
+    "device_type": "browser",
+    "paired_at": "2025-11-26T13:17:34.045770",
+    "last_seen": "2025-11-26T13:17:34.045774",
+    "access_level": "operator"
+  },
+  "eoLOI3ZCAHN7ktTcG-YfDDUtQvRDJmjFEbP08mXEoBU": {
+    "token": "eoLOI3ZCAHN7ktTcG-YfDDUtQvRDJmjFEbP08mXEoBU",
+    "device_name": "Chrome - 03:08 PM",
+    "device_type": "browser",
+    "paired_at": "2025-11-26T16:10:38.578131",
+    "last_seen": "2025-11-26T16:10:38.578134",
+    "access_level": "operator"
+  },
+  "H_kQcPbkQMq8VUZR5WX7LH22m7XSXHQrRobYruS3_SE": {
+    "token": "H_kQcPbkQMq8VUZR5WX7LH22m7XSXHQrRobYruS3_SE",
+    "device_name": "Test Device",
+    "device_type": "browser",
+    "paired_at": "2025-11-26T20:41:46.828240",
+    "last_seen": "2025-11-26T20:41:46.828241",
+    "access_level": "operator"
+  },
+  "kBTjvyvh9K5dmw3uh1gRYGRwcU-DJXUmzjxjlffBSoY": {
+    "token": "kBTjvyvh9K5dmw3uh1gRYGRwcU-DJXUmzjxjlffBSoY",
+    "device_name": "Chrome - 07:44 PM",
+    "device_type": "browser",
+    "paired_at": "2025-11-26T20:44:58.985793",
+    "last_seen": "2025-11-26T20:44:58.985796",
+    "access_level": "operator"
+  },
+  "xGjNxPBfmPT0gb2wjeDbaGpxT-jSCrNRX1xg2hmllyc": {
+    "token": "xGjNxPBfmPT0gb2wjeDbaGpxT-jSCrNRX1xg2hmllyc",
+    "device_name": "Final Test",
+    "device_type": "browser",
+    "paired_at": "2025-11-26T21:52:27.620291",
+    "last_seen": "2025-11-26T21:56:04.545259",
+    "access_level": "operator"
+  },
+  "1Gn4kaCYJW07c55CJ-VAFk1As34Cn9jnx12L24lQRl0": {
+    "token": "1Gn4kaCYJW07c55CJ-VAFk1As34Cn9jnx12L24lQRl0",
+    "device_name": "Chrome - 08:53 PM",
+    "device_type": "browser",
+    "paired_at": "2025-11-26T21:54:17.793332",
+    "last_seen": "2025-11-26T21:54:17.793335",
+    "access_level": "operator"
+  },
+  "oiLPxoXY0r4vc0MOVENtY7QhYwkth-08qrvBqvsChvE": {
+    "token": "oiLPxoXY0r4vc0MOVENtY7QhYwkth-08qrvBqvsChvE",
+    "device_name": "Chrome - 01:16 PM",
+    "device_type": "browser",
+    "paired_at": "2025-11-27T14:16:48.542431",
+    "last_seen": "2025-11-27T14:16:48.542433",
+    "access_level": "operator"
+  },
+  "vC65qjfY8Kf0pFzbsvSZmIwMSDdXw6PnHBkoVDFVeM8": {
+    "token": "vC65qjfY8Kf0pFzbsvSZmIwMSDdXw6PnHBkoVDFVeM8",
+    "device_name": "Chrome - 01:22 PM",
+    "device_type": "browser",
+    "paired_at": "2025-11-27T14:22:32.810557",
+    "last_seen": "2025-11-27T14:22:32.810559",
+    "access_level": "operator"
+  },
+  "WrhbR4yRA_4Hn-D1zqDad5Msj5qHxMC5EuPC0ib1q70": {
+    "token": "WrhbR4yRA_4Hn-D1zqDad5Msj5qHxMC5EuPC0ib1q70",
+    "device_name": "Chrome - 01:24 PM",
+    "device_type": "browser",
+    "paired_at": "2025-11-27T14:24:32.101728",
+    "last_seen": "2025-11-27T14:24:32.101730",
+    "access_level": "operator"
+  },
+  "UkBZJlwurF39CYDCVrduziHwCuXtOtI2mzZHoZJt924": {
+    "token": "UkBZJlwurF39CYDCVrduziHwCuXtOtI2mzZHoZJt924",
+    "device_name": "Chrome - 01:25 PM",
+    "device_type": "browser",
+    "paired_at": "2025-11-27T14:25:39.764790",
+    "last_seen": "2025-11-27T14:25:39.764791",
+    "access_level": "operator"
+  },
+  "VjOIGH5GIbJiTu8r3U3cuOitlho4zPbBvB2YPJkVmUI": {
+    "token": "VjOIGH5GIbJiTu8r3U3cuOitlho4zPbBvB2YPJkVmUI",
+    "device_name": "Chrome - 01:34 PM",
+    "device_type": "browser",
+    "paired_at": "2025-11-27T14:34:28.618645",
+    "last_seen": "2025-11-27T14:34:28.618647",
+    "access_level": "operator"
+  },
+  "dyt92IkplaqGyAAktMpV7RhI5YXHEIRklzocTJ98IcE": {
+    "token": "dyt92IkplaqGyAAktMpV7RhI5YXHEIRklzocTJ98IcE",
+    "device_name": "Chrome - 03:25 PM",
+    "device_type": "browser",
+    "paired_at": "2025-11-27T16:26:45.547846",
+    "last_seen": "2025-11-27T16:26:45.547849",
+    "access_level": "operator"
+  },
+  "fFE18p1nn2EquCGP9WCAnlE23YDMgh4WyTLEqZ8O76E": {
+    "token": "fFE18p1nn2EquCGP9WCAnlE23YDMgh4WyTLEqZ8O76E",
+    "device_name": "Chrome - 04:29 PM",
+    "device_type": "browser",
+    "paired_at": "2025-11-27T16:29:47.718477",
+    "last_seen": "2025-11-27T16:29:47.718479",
+    "access_level": "operator"
+  },
+  "TA7L7Txiwi1glkRU_lGBBHVWrfhuxx8Jkj2N2S7y5bs": {
+    "token": "TA7L7Txiwi1glkRU_lGBBHVWrfhuxx8Jkj2N2S7y5bs",
+    "device_name": "Chrome - 04:32 PM",
+    "device_type": "browser",
+    "paired_at": "2025-11-27T16:33:33.893055",
+    "last_seen": "2025-11-27T16:33:33.893057",
+    "access_level": "operator"
+  },
+  "2nL8PgcHfkzFd5PEMYfuy7mKV10phNbnrmYsWRpiDPY": {
+    "token": "2nL8PgcHfkzFd5PEMYfuy7mKV10phNbnrmYsWRpiDPY",
+    "device_name": "Chrome - 03:52 PM",
+    "device_type": "browser",
+    "paired_at": "2025-11-27T16:52:42.964641",
+    "last_seen": "2025-11-27T16:54:08.082829",
+    "access_level": "operator"
+  },
+  "MUiIO2rYzY4AdEZC1rfW_E-G1GtnWReoAE4M1gxc5Js": {
+    "token": "MUiIO2rYzY4AdEZC1rfW_E-G1GtnWReoAE4M1gxc5Js",
+    "device_name": "Chrome - 04:55 PM",
+    "device_type": "browser",
+    "paired_at": "2025-11-27T16:56:27.044446",
+    "last_seen": "2025-11-27T16:56:27.044449",
+    "access_level": "operator"
+  }
+}
